@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:50 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/03 19:44:37 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/05 01:41:24 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@
 class Fixed
 {
 	private:
-		int					fixed_point;
-		static const int	bits = 8;
+		int					_value;
+		static const int	_bits;
 
 	public:
 		Fixed(void); //Constructor
-		//Copy constructor
-		//Copy assignment operator
+		Fixed(const Fixed &copy); //Copy constructor
+		Fixed &operator=(const Fixed &copy); //Copy assignment operator
 		~Fixed(); //Destructor
 
 		//Member Functions
