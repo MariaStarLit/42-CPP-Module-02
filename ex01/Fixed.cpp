@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:47 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/05 02:13:24 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:44:25 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,18 @@
 const int	Fixed::_bits = 8;
 
 Fixed::Fixed() : _value(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+{std::cout << "Default constructor called" << std::endl;}
 
 Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
-	//*this = nbr;
+	this->_value = (nbr << this->_bits);
 }
 
 Fixed::Fixed(const float nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	//*this = nbr;
+	this->_value = roundf(nbr * (1 << this->_bits));
 }
 
 Fixed::Fixed(const Fixed &copy)
@@ -41,30 +39,24 @@ Fixed &Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if(this != &copy)
-	{
-		_value = copy.getRawBits();
-	}
+		this->_value = copy.getRawBits();
 	return *this;
 }
 
 Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+{std::cout << "Destructor called" << std::endl;}
 
 int		Fixed::getRawBits( void ) const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
-}
+{return (this->_value);}
 
 void	Fixed::setRawBits( int const raw )
-{
-	this->_value = raw;
-}
+{this->_value = raw;}
 
-int		toInt( void ) const
-{}
+int		Fixed::toInt( void ) const
+{return _value >> _bits;}
 
-float	toFloat( void ) const
-{}
+float	Fixed::toFloat( void ) const
+{return ((float)_value / (1 << _bits));}
+
+std::ostream	&operator<<(std::ostream &val, const Fixed &fix)
+{return (val << fix.toFloat());}

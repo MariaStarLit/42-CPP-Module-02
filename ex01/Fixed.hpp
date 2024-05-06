@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:50 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/05 02:12:30 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:27:09 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ class Fixed
 		~Fixed();								//Destructor
 
 		//Member Functions
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-		int		toInt( void ) const;
-		float	toFloat( void ) const;
+		int				getRawBits( void ) const;
+		void			setRawBits( int const raw );
+		int				toInt( void ) const;
+		float			toFloat( void ) const;
 };
+
+std::ostream	&operator<<(std::ostream &val, const Fixed &fix);

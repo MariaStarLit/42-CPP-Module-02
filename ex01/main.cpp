@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:53 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/05 01:57:15 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:24:08 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );
+	
 	a = Fixed( 1234.4321f );
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
