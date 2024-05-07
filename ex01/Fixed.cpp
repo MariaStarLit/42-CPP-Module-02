@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:47 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/06 20:44:25 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:05:01 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ int		Fixed::toInt( void ) const
 float	Fixed::toFloat( void ) const
 {return ((float)_value / (1 << _bits));}
 
-std::ostream	&operator<<(std::ostream &val, const Fixed &fix)
-{return (val << fix.toFloat());}
+std::ostream	&operator<<(std::ostream &output, const Fixed &fix)
+{return (output << fix.toFloat());}
