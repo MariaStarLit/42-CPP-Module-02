@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:47 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/05 01:41:08 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:36:42 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ Fixed &Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if(this != &copy)
-	{
 		_value = copy.getRawBits();
-	}
 	return *this;
 }
 
