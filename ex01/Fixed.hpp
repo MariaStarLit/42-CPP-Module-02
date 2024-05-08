@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:50 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/07 20:05:10 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:20:25 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 class Fixed
 {
 	private:
-		int					_value;
-		static const int	_bits;
+		int					_fixed_point;
+		static const int	_frac_bits;
 
 	public:
 		Fixed(void);							//Constructor
