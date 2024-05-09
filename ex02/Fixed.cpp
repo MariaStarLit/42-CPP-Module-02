@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:47 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/09 02:40:05 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/09 03:04:16 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed &Fixed::operator=(const Fixed &copy)
 }
 
 //Arithmetic operators
-Fixed	Fixed::operator+(const Fixed &plus) const
+Fixed	Fixed::operator+(const Fixed &plus)
 {
 	Fixed res;
 	res.setRawBits(this->getRawBits() + plus.getRawBits());
