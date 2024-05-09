@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:47 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/09 00:19:13 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/09 02:40:05 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,49 +40,54 @@ Fixed &Fixed::operator=(const Fixed &copy)
 }
 
 //Arithmetic operators
-Fixed	Fixed::operator+(const Fixed &plus)
+Fixed	Fixed::operator+(const Fixed &plus) const
 {
-	this->_fixed_point += plus.getRawBits() >> plus._frac_bits;
-	return (*this);
+	Fixed res;
+	res.setRawBits(this->getRawBits() + plus.getRawBits());
+	return (res);
 }
 
 Fixed	Fixed::operator-(const Fixed &minus)
 {
-	this->_fixed_point -= minus.getRawBits() >> minus._frac_bits;
-	return (*this);
+	Fixed res;
+	res.setRawBits(this->getRawBits() - minus.getRawBits());
+	return (res);
 }
 
 Fixed	Fixed::operator*(const Fixed &multiply)
 {
-	this->_fixed_point *= multiply.getRawBits() >> multiply._frac_bits;
-	return (*this);
+	Fixed res;
+	res.setRawBits((this->getRawBits() * multiply.getRawBits()) >> _frac_bits);
+	return (res);
 }
 
 Fixed	Fixed::operator/(const Fixed &divide)
 {
-	this->_fixed_point /= divide.getRawBits() >> divide._frac_bits;
-	return (*this);
+	Fixed res;
+	res.setRawBits((this->getRawBits() / divide.getRawBits()) << _frac_bits);
+	return (res);
 }
 
-//Incrementation operators
+//Pre-Incrementation operators
 Fixed	Fixed::operator++(void)
 {
-	this->_fixed_point++;
+	++this->_fixed_point;
 	return (*this);
 }
 
+Fixed	Fixed::operator--(void)
+{
+	--this->_fixed_point;
+	return (*this);
+}
+
+//Pos-Incrementation operators
 Fixed	Fixed::operator++(int i)
 {
 	(void)i;
 	Fixed	temp(*this);
 	this->_fixed_point++;
 	return (temp);
-}
-
-Fixed	Fixed::operator--(void)
-{
-	this->_fixed_point--;
-	return (*this);
 }
 
 Fixed	Fixed::operator--(int i)

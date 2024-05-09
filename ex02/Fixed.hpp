@@ -6,7 +6,7 @@
 /*   By: mde-avel <mde-avel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:21:50 by mde-avel          #+#    #+#             */
-/*   Updated: 2024/05/09 01:01:55 by mde-avel         ###   ########.fr       */
+/*   Updated: 2024/05/09 01:53:22 by mde-avel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Fixed
 		//Copy assignment operator
 		Fixed	&operator=(const Fixed &copy);
 		//Arithmetic operators
-		Fixed	operator+(const Fixed &plus);
+		Fixed	operator+(const Fixed &plus) const;
 		Fixed	operator-(const Fixed &minus);
 		Fixed	operator*(const Fixed &multiply);
 		Fixed	operator/(const Fixed &divide);
